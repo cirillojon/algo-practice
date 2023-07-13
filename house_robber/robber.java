@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 class robber{
     public static void main(String[] args){
-        int[] nums = {1,2,3,4,5,6};
+        int[] nums = {1,2,3,4,5};
         System.out.println(rob(nums));
     }
 
@@ -17,7 +17,7 @@ class robber{
         if(index == 0) return nums[0];
         if(index == 1) return Math.max(nums[0], nums[1]);
         if(map.containsKey(index)) return map.get(index);
-        res = Math.max(nums[0] + helper(nums, res, map, index - 2), helper(nums, res, map, index - 1));
+        res = Math.max(nums[index] + helper(nums, res, map, index - 2), helper(nums, res, map, index - 1));
         map.put(index, res); return res;
     }
 }
