@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class billboards {
     public static void main(String[] args){
-        int[] nums = {3,7,3,2,9};
+        int[] nums = {1,2,3,4,5,6};
         System.out.println(solution(nums));
     }
     private static int solution(int[] rods){
@@ -26,7 +26,7 @@ public class billboards {
                     
                 // if x > d
                 else
-                    map.put(d - x, Math.max(map.getOrDefault(x - d, 0), y + d));
+                    map.put(x - d, Math.max(map.getOrDefault(x - d, 0), y + d));
             }
         } 
         System.out.println(map);
