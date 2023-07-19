@@ -19,5 +19,6 @@ def solution(nums):
     helper(res, nums, [], used)
     return res
 
-nums = [1,2,3]
+nums = [1,2,3,4]
 print(solution(nums))
+print(solution(nums)[8])
