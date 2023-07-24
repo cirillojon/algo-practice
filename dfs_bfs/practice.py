@@ -29,8 +29,9 @@ def bfs(graph, visited, node):
         print(s, end = " ")
 
         for n in graph[s]:
-            visited.append(n)
-            queue.append(n)
+            if n not in visited:
+                visited.append(n)
+                queue.append(n)
         
 
 
