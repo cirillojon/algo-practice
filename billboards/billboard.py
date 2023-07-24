@@ -11,13 +11,13 @@ def solution(nums):
         for d in key_arr:
             y = temp[d]
 
-            cache[d+x] = max(temp.get(d+x, 0), y)
+            cache[d+x] = max(cache.get(d+x, 0), y)
             
             if d >=x:
-                cache[d-x] = max(temp.get(d-x, 0), y+x)
+                cache[d-x] = max(cache.get(d-x, 0), y+x)
 
             else:
-                cache[x-d] = max(temp.get(x-d, 0), y+d)
+                cache[x-d] = max(cache.get(x-d, 0), y+d)
     
     return cache.get(0,0)
 
