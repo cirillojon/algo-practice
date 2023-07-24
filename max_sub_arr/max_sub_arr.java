@@ -4,7 +4,7 @@ public class max_sub_arr {
         System.out.println(max_sub(nums));
     }
     private static int max_sub(int[] nums){
-        int curr_max = 0; int end_max = 0;
+        int curr_max = nums[0]; int end_max = nums[0];
         for(int i = 1; i < nums.length; i++){
             end_max = Math.max(nums[i], nums[i] + end_max);
             curr_max = Math.max(curr_max, end_max);
