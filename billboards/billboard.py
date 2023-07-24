@@ -17,7 +17,7 @@ def solution(nums):
                 cache[d-x] = max(temp.get(d-x, 0), y+x)
 
             else:
-                cache[x-d] = max(temp.get(x-d, 0), y-d)
+                cache[x-d] = max(temp.get(x-d, 0), y+d)
     
     return cache.get(0,0)
 
