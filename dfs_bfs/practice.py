@@ -13,25 +13,26 @@ visited = []
 def dfs(graph, visited, node):
     if node not in visited:
         visited.append(node)
-        print(node)
+
+        print(node, end = " ")
 
         for n in graph[node]:
             dfs(graph, visited, n)
 
 queue = []
-
 def bfs(graph, visited, node):
-    queue.append(node)
     visited.append(node)
+    queue.append(node)
 
     while queue:
         s = queue.pop(0)
-        print(s)
+        print(s, end = " ")
 
         for n in graph[s]:
-            if n not in visited:
-                visited.append(n)
-                queue.append(n)
+            visited.append(n)
+            queue.append(n)
+        
+
 
 print("DFS:")
 dfs(graph, visited, 'A')
